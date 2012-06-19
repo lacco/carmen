@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.description = "A collection of geographic country and state names for Ruby. Also includes replacements for Rails' country_select and state_select plugins"
 
   s.required_rubygems_version = ">= 1.3.6"
+  s.add_dependency('sort_alphabetical')
   s.add_development_dependency('mocha')
   s.add_development_dependency('rails', '3.2.2')
 

@@ -12,7 +12,7 @@ class TestCarmen < Test::Unit::TestCase
 
   def test_localized_countries
     Carmen.default_locale = :de
-    assert_equal ["Ascension (verwaltet von St. Helena)", 'AC'], Carmen.countries[0]
+    assert_equal ["Afghanistan", "AF"], Carmen.countries[0]
   end
 
   def test_single_localized_countries_call
@@ -20,7 +20,7 @@ class TestCarmen < Test::Unit::TestCase
     assert_equal ['Aland Islands', 'AX'], Carmen.countries[1]
 
     # Switch to a different locale for one call
-    assert_equal ["Ascension (verwaltet von St. Helena)", 'AC'], Carmen.countries(:locale => 'de')[0]
+    assert_equal ["Afghanistan", "AF"], Carmen.countries(:locale => 'de')[0]
 
     # Make sure that we are back in the default locale
     assert_equal ['Aland Islands', 'AX'], Carmen.countries[1]

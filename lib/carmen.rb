@@ -5,6 +5,8 @@ rescue LoadError
   require 'fileutils' # ftools is now fileutils in Ruby 1.9
 end
 
+require 'sort_alphabetical'
+
 # Fix to autoload in Rails 3
 if defined?(Rails)
   if Rails::VERSION::MAJOR > 2
@@ -59,7 +61,7 @@ module Carmen
       end
 
       # As the data exists, load it
-      @countries[locale] = YAML.load_file(localized_data)
+      @countries[locale] = YAML.load_file(localized_data).sort_alphabetical_by(&:first)
     end
 
     # Return data after filtering excluded countries and prepending prepended countries
